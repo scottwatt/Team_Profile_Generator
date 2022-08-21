@@ -4,6 +4,8 @@ const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 
+const team = [];
+
 const addManager = () => {
     return inquirer.prompt([
         {
@@ -39,6 +41,25 @@ const addManager = () => {
             validate: email => {
                 validEmail = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/.test(email);
             }
+        },
+        {
+            type: 'input',
+            name: 'officeNumber',
+            message: "Please enter the manager's office number.",
+            validate: inputedName => {
+                if(isNaN(inputedName)) {
+                    console.log('Please enter an office number.')
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+
         }
     ])
+    .then(managerData => {
+        const {name, id, email, officeNumber} = managerData;
+        const manager = new Manager (name, id, email, officeNumber);
+
+    })
 }
