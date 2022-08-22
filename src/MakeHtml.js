@@ -2,7 +2,7 @@ const generateManager = function (manager) {
     return `
     <div class="col-4 mt-4">
         <div class="card h-100">
-            <div class="card-header">
+            <div class="card-header bg-primary">
                 <h3>${manager.name}</h3>
                 <h4>Manager</h4><i class="material-icons">content_paste</i>
             </div>
@@ -21,7 +21,7 @@ const generateEngineer = function (engineer) {
     return `
     <div class="col-4 mt-4">
         <div class="card h-100">
-            <div class="card-header">
+            <div class="card-header bg-primary">
                 <h3>${engineer.name}</h3>
                 <h4>Engineer</h4><i class="material-icons">laptop_mac</i>
             </div>
@@ -40,7 +40,7 @@ const generateIntern = function (intern) {
     return `
     <div class="col-4 mt-4">
         <div class="card h-100">
-            <div class="card-header">
+            <div class="card-header bg-primary">
                 <h3>${intern.name}</h3>
                 <h4>Intern</h4><i class="material-icons">assignment_ind</i>
             </div>
@@ -55,7 +55,7 @@ const generateIntern = function (intern) {
 };
 
 // push array to page 
-MakeHtml = (data) => {
+makeHTML = (data) => {
 
     // array for cards 
     pageArray = []; 
@@ -115,7 +115,7 @@ const generateTeamPage = function (employeeCards) {
   <body>
       <header>
           <nav class="navbar" id="navbar">
-              <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">Team Profile</span>
+              <span class="navbar-brand mb-0 h1 w-100 text-center bg-info" id="navbar-text">Team Profile</span>
           </nav>
       </header>
       <main>
@@ -136,4 +136,4 @@ const generateTeamPage = function (employeeCards) {
 }
 
 // export to index
-module.exports = MakeHtml; 
+module.exports = makeHTML; 

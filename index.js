@@ -4,10 +4,10 @@ const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 
-const MakeHtml = require('./src/makeHTML');
+const makeHTML = require('./src/makeHTML');
 
 
-const team = [];
+const teamArray = [];
 
 const addEmployee = () => {
     return inquirer.prompt([
@@ -107,26 +107,26 @@ const addEmployee = () => {
         }
     ])
     .then(employeeData => {
-        const {name, id, email, officeNumber, github, school, confirmAddEmployee} = employeeData;
+        const {name, id, email, role, officeNumber, github, school, confirmAddEmployee} = employeeData;
         let employee;
 
-        if(list.role === 'Manager'){
+        if(role === 'Manager'){
             employee = new Manager(name, id, email, officeNumber);
             console.log(employee);
-        }else if(list.role === "Engineer"){
+        }else if(role === "Engineer"){
             employee = new Engineer(name, id, email, github);
             console.log(employee);
-        }else if(list.role === "Intern"){
+        }else if(role === "Intern"){
             employee = new Intern(name, id, email, school);
             console.log(employee);
         }
 
-        team.push(employee);
+        teamArray.push(employee);
 
         if(confirmAddEmployee){
-            return addEmployee(team);
+            return addEmployee(teamArray);
         }else {
-            return team;
+            return teamArray;
         }
 
 
@@ -139,14 +139,14 @@ const writeFile = data => {
             console.log(err);
             return;
         } else {
-            console.log("Your team profile has been successfully created! Please check out the index.html")
+            console.log("Your teamArray profile has been successfully created! Please check out the index.html")
         }
     })
 };
 
 addEmployee()
-  .then(team => {
-    return makeHTML(team);
+  .then(teamArray => {
+    return makeHTML(teamArray);
   })
   .then(pageHTML => {
     return writeFile(pageHTML);
