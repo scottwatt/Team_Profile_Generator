@@ -1,7 +1,7 @@
 
 # Team Profile Generator
 ## Licensing:
-[![license](https://img.shields.io/badge/license--blue)](https://shields.io)
+[![license](https://img.shields.io/badge/license-MIT-blue)](https://shields.io)
 ## Table of Contents 
 - [Description](#description)
 - [Installation](#installation)
@@ -16,7 +16,9 @@ The user should clone the repository from GitHub and download Node. This applica
 ## Usage:
 Use inquirer from the command line and answer prompted questions<br>
 Video demo: <br>
-[Demo](https://drive.google.com/file/d/16VbPmCydJHxgXAJzghtTQmmtTRMZ3ZfU/view?usp=sharing)
+[Demo](https://drive.google.com/file/d/16VbPmCydJHxgXAJzghtTQmmtTRMZ3ZfU/view?usp=sharing)<br>
+Picture Demo: <br>
+![Screenshot](./assets/demo.png)
 ## License:
 MIT
 ## Contribution:
