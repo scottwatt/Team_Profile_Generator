@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+#navbar {
+    font-size: 50px;
+}
+
+.nav-brand {
+    font-size: 50px;
+}
+
+
+.container {
+    margin: 100px auto;
+    justify-content: space-evenly;
+    display: flex;
+    
+}
+
+.card {
+    width: 110%;
+}
